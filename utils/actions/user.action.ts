@@ -1,3 +1,4 @@
+'use server'
 import User from "../models/user";
 import { connectDB } from "../mongoose";
 
