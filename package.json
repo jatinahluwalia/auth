@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "mongoose": "^8.0.0",
+    "next": "latest",
+    "next-auth": "^4.24.4",
     "react": "latest",
-    "react-dom": "latest",
-    "next": "latest"
+    "react-dom": "latest"
   },
   "devDependencies": {
     "typescript": "latest",
