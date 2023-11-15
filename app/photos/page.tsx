@@ -1,19 +1,18 @@
-"use client";
-import { useState } from "react";
-import { imageUploader } from "../../methods/imageUploder";
-import axios from "axios";
+'use client';
+import axios from 'axios';
+import { useState } from 'react';
 
 const Page = () => {
-  const [image, setImage] = useState<any | undefined>("");
+  const [image, setImage] = useState<any | undefined>('');
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     console.log(image);
-    let body = new FormData();
-    body.set("key", "121d3d326720cc4c37b6820cdfd2ecb4");
-    body.append("image", image);
+    const body = new FormData();
+    body.set('key', '121d3d326720cc4c37b6820cdfd2ecb4');
+    body.append('image', image);
 
-    const data = await axios.post("https://api.imgbb.com/1/upload", body);
+    const data = await axios.post('https://api.imgbb.com/1/upload', body);
 
     console.log(data);
   };

@@ -1,13 +1,13 @@
-import GoogleProvider from "next-auth/providers/google";
-import NextAuth from "next-auth/next";
-import { connectDB } from "@/utils/mongoose";
-import User from "@/utils/models/user";
+import GoogleProvider from 'next-auth/providers/google';
+import NextAuth from 'next-auth/next';
+import { connectDB } from '@/utils/mongoose';
+import User from '@/utils/models/user';
 
 const handler = NextAuth({
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_ID || "",
-      clientSecret: process.env.GOOGLE_SECRET || "",
+      clientId: process.env.GOOGLE_ID || '',
+      clientSecret: process.env.GOOGLE_SECRET || '',
     }),
   ],
   callbacks: {
@@ -15,11 +15,10 @@ const handler = NextAuth({
       const { user } = params;
       try {
         await connectDB();
-        await User.create({ email: user.email, role: "admin" });
+        await User.create({ email: user.email, role: 'admin' });
 
         return true;
       } catch (error) {
-        console.log(error);
         return false;
       }
     },

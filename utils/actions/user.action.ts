@@ -1,6 +1,6 @@
-'use server'
-import User from "../models/user";
-import { connectDB } from "../mongoose";
+'use server';
+import User from '../models/user';
+import { connectDB } from '../mongoose';
 
 export const getUser = async ({ email }: { email?: string | null }) => {
   try {
